@@ -1,0 +1,40 @@
+return {
+  {
+    "petertriho/nvim-scrollbar",
+    enabled = false,
+    event = "LazyFile",
+    opts = {
+      handle = { text = "  " },
+      marks = {
+        Cursor = { text = " •" },
+        Search = { text = { "--", "==" }, highlight = "Constant" },
+        Error = { text = { "--", "==" } },
+        Warn = { text = { "--", "==" } },
+        Info = { text = { "--", "==" } },
+        Hint = { text = { "--", "==" } },
+        Misc = { text = { "--", "==" }, highlight = "Statement" },
+      },
+      excluded_filetypes = {
+        "help",
+        "alpha",
+        "dashboard",
+        "neo-tree",
+        "Trouble",
+        "trouble",
+        "lazy",
+        "mason",
+        "notify",
+        "toggleterm",
+        "lazyterm",
+        "cmp_docs",
+        "cmp_menu",
+        "noice",
+        "prompt",
+        "TelescopePrompt",
+      },
+      handlers = {
+        handle = false,
+      },
+    },
+  },
+}

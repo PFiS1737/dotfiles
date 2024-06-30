@@ -1,0 +1,1 @@
+-- Default autocmds: lazyvim.config.autocmds
