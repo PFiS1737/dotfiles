@@ -2,7 +2,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "mcfuncx" } },
+    -- opts = { ensure_installed = { "mcfuncx" } },
     init = function()
       local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
@@ -11,6 +11,7 @@ return {
         install_info = {
           url = "https://github.com/PFiS1737/tree-sitter-mcfuncx",
           files = { "src/parser.c" },
+          branch = "main",
         },
         filetype = "mcfuncx",
         maintainers = { "@PFiS1737" },
