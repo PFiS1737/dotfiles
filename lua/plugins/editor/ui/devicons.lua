@@ -16,6 +16,10 @@ local icons = {
 ---@type LazySpec
 return {
   {
+    "mini.icons",
+    enabled = false,
+  },
+  {
     "nvim-tree/nvim-web-devicons",
     opts = {
       override = {
