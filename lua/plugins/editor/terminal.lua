@@ -76,9 +76,9 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>f<c-t>"] = { name = "+terminal" },
-        -- ["<leader>ts"] = { name = "+send to terminal" },
+      spec = {
+        { "<leader>f<c-t>", group = "terminal" },
+        -- { "<leader>ts", group = "send to terminal" },
       },
     },
   },
