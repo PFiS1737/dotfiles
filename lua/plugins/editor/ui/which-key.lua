@@ -6,13 +6,13 @@ return {
       spec = {
         { "<leader>z", group = "sundries" },
       },
-
-      -- disable icons
       replace = {
         key = {},
-        desc = {},
+        -- desc = {},
       },
       icons = {
+        -- disable icons
+        mappings = false,
         rules = false,
       },
     },
