@@ -30,12 +30,6 @@ return {
           },
         },
       }
-
-      opts.sections.lualine_z = {
-        function()
-          return "  " .. os.date("%R") -- add space after icon
-        end,
-      }
     end,
   },
 }
