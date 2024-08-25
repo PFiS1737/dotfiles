@@ -15,4 +15,12 @@ return {
       ["async-recursion"] = { "async_recursion" },
     },
   },
+  diagnostics = {
+    experimental = {
+      enable = true,
+    },
+    styleLints = {
+      enable = true,
+    },
+  },
 }
