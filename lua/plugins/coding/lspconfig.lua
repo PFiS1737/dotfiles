@@ -17,10 +17,10 @@ return {
         },
       },
       inlay_hints = {
-        enabled = false,
+        enabled = true,
       },
       codelens = {
-        enabled = false,
+        enabled = true,
       },
     },
   },
