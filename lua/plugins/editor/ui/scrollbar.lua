@@ -1,19 +1,9 @@
 return {
   {
-    "petertriho/nvim-scrollbar",
-    enabled = false,
+    "dstein64/nvim-scrollview",
     event = "LazyFile",
     opts = {
-      handle = { text = "  " },
-      marks = {
-        Cursor = { text = " •" },
-        Search = { text = { "--", "==" }, highlight = "Constant" },
-        Error = { text = { "--", "==" } },
-        Warn = { text = { "--", "==" } },
-        Info = { text = { "--", "==" } },
-        Hint = { text = { "--", "==" } },
-        Misc = { text = { "--", "==" }, highlight = "Statement" },
-      },
+      signs_on_startup = {}, -- only need the draggable scrollbar
       excluded_filetypes = {
         "help",
         "alpha",
@@ -31,9 +21,6 @@ return {
         "noice",
         "prompt",
         "TelescopePrompt",
-      },
-      handlers = {
-        handle = false,
       },
     },
   },
