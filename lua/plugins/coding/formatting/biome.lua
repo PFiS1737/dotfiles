@@ -22,7 +22,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        -- use "check"for both formatting and linting
+        -- use "biome-check" for both formatting and linting
         ["javascript"] = { "biome-check" },
         ["javascriptreact"] = { "biome-check" },
         ["typescript"] = { "biome-check" },
