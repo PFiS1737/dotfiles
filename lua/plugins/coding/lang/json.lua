@@ -1,6 +1,5 @@
 ---@type LazySpec
 return {
-  { import = "plugins.coding.lang.node" },
   { import = "lazyvim.plugins.extras.lang.json" },
   { import = "lazyvim.plugins.extras.lang.yaml" },
   {
