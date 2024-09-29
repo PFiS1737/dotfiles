@@ -6,6 +6,28 @@ return {
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
       "nvim-tree/nvim-web-devicons",
+
+      -- use which-key to define keymaps
+      ---@see https://github.com/LazyVim/LazyVim/issues/4502
+      {
+        "folke/which-key.nvim",
+        opts = {
+          spec = {
+            {
+              "<leader>ub",
+              function()
+                ---@see https://github.com/Bekaboo/dropbar.nvim/issues/115
+                if vim.o.winbar == "" then
+                  vim.o.winbar = "%{%v:lua.dropbar.get_dropbar_str()%}"
+                else
+                  vim.o.winbar = ""
+                end
+              end,
+              desc = "Toggle Breadcrumbs",
+            },
+          },
+        },
+      },
     },
     keys = {
       {
@@ -14,18 +36,6 @@ return {
           require("dropbar.api").pick()
         end,
         desc = "Pick Breadcrumbs",
-      },
-      {
-        "<leader>ub",
-        function()
-          ---@see https://github.com/Bekaboo/dropbar.nvim/issues/115
-          if vim.o.winbar == "" then
-            vim.o.winbar = "%{%v:lua.dropbar.get_dropbar_str()%}"
-          else
-            vim.o.winbar = ""
-          end
-        end,
-        desc = "Toggle Breadcrumbs", -- FIXME: 由于 lazyvim.util.toggle.wk(), 此处的 desc 不生效
       },
     },
     opts = {
