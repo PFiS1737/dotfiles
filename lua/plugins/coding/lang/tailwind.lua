@@ -37,7 +37,7 @@ return {
     },
     opts = {
       conceal = {
-        enabled = true,
+        -- enabled = true,
         min_length = 40,
         symbol = "󱏿",
       },
