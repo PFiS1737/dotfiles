@@ -2,7 +2,15 @@ return {
   {
     "dstein64/nvim-scrollview",
     event = "LazyFile",
+    keys = {
+      {
+        "<leader>uo",
+        "<cmd>ScrollViewToggle<cr>",
+        desc = "Toggle Scrollbar",
+      },
+    },
     opts = {
+      on_startup = false,
       signs_on_startup = {}, -- only need the draggable scrollbar
       excluded_filetypes = {
         "help",
