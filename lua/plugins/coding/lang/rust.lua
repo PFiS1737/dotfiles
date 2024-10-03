@@ -15,7 +15,6 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    version = "^5",
     lazy = false,
     opts = function(_, opts)
       opts = vim.tbl_deep_extend("force", opts or {}, {
