@@ -23,7 +23,7 @@ return {
       filesystem = {
         window = {
           mappings = {
-            ["O"] = "toggle_node",
+            ["<c-o>"] = "toggle_node",
             ["F"] = "filter_on_submit",
             -- ["<c-t>"] = "close_all_nodes",
 
