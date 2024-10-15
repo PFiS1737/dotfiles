@@ -76,11 +76,11 @@ return {
         },
         ["js"] = {
           pattern = "^(.+)%.js$",
-          files = { "%1.js.map", "%1.min.js", "%1.d.ts" },
+          files = { "%1.js.map", "%1.min.js" },
         },
         ["ts"] = {
           pattern = "^(.+)%.ts$",
-          files = { "%1.ts.map", "%1.d.ts", "%1.d.ts.map" },
+          files = { "%1.ts.map", "%1.d.ts.map" },
         },
       },
       default_component_configs = {
