@@ -3,17 +3,6 @@ return {
   { import = "lazyvim.plugins.extras.lang.rust" },
   { import = "lazyvim.plugins.extras.lang.toml" },
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      setup = {
-        -- see `:h rustaceanvim.mason`
-        rust_analyzer = function()
-          return true
-        end,
-      },
-    },
-  },
-  {
     "mrcjkb/rustaceanvim",
     lazy = false,
     opts = function(_, opts)
