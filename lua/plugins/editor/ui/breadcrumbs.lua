@@ -57,7 +57,7 @@ return {
     config = function(_, opts)
       require("dropbar").setup(opts)
 
-      vim.api.nvim_set_hl(0, "DropBarIconUISeparator", { link = "NormalSB" })
+      vim.api.nvim_set_hl(0, "DropBarIconUISeparator", { link = "SpecialKey" })
     end,
   },
 }
