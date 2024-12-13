@@ -3,6 +3,8 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
+      preset = "classic",
+      delay = 1000,
       spec = {
         { "<leader>z", group = "sundries" },
       },
