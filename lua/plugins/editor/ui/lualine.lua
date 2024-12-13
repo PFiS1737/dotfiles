@@ -7,7 +7,7 @@ return {
         LazyVim.lualine.root_dir({
           ---@diagnostic disable-next-line: assign-type-mismatch
           parent = false,
-          color = LazyVim.ui.fg("Special"),
+          color = { fg = Snacks.util.color("Special") },
           icon = "󱉭", -- fix repeated spaces
         }),
         {
