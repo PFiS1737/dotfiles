@@ -1,5 +1,11 @@
 return {
   {
+    "folke/snacks.nvim",
+    opts = function()
+      vim.g.snacks_scroll = false
+    end,
+  },
+  {
     "dstein64/nvim-scrollview",
     event = "LazyFile",
     keys = {
