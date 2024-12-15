@@ -8,3 +8,4 @@ if vim.env.TERMUX_VERSION ~= nil then
 end
 
 vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_blink_main = true

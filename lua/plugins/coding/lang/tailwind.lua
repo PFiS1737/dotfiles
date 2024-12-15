@@ -23,6 +23,7 @@ return {
       },
       {
         "hrsh7th/nvim-cmp",
+        optional = true,
         opts = function(_, opts)
           local format = opts.formatting.format
 
