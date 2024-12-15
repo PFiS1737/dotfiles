@@ -2,16 +2,6 @@
 return {
   { import = "lazyvim.plugins.extras.editor.telescope" },
   {
-    "folke/snacks.nvim",
-    opts = {
-      dashboard = {
-        preset = {
-          pick = LazyVim.pick.open,
-        },
-      },
-    },
-  },
-  {
     "nvim-telescope/telescope.nvim",
     keys = {
       {
