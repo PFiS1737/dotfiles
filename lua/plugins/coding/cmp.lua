@@ -16,14 +16,6 @@ return {
               { "label", "label_description", gap = 1 },
               { "kind_icon", "kind" },
             },
-            components = {
-              kind_icon = {
-                text = function(ctx)
-                  print(ctx.kind_icon)
-                  return ctx.kind_icon .. ctx.icon_gap
-                end,
-              },
-            },
           },
         },
         documentation = {
