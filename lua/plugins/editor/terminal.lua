@@ -52,12 +52,6 @@ return {
 
       -- override
       {
-        "<C-_>",
-        "<leader>ft",
-        desc = "Terminal (root dir)",
-        remap = true,
-      },
-      {
         "<C-/>",
         "<leader>ft",
         desc = "Terminal (root dir)",

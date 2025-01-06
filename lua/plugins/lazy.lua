@@ -1,6 +1,5 @@
 ---@type LazySpec
 return {
-  { "LazyVim/LazyVim", version = false },
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
