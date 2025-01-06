@@ -1,9 +1,8 @@
 return {
   {
     "saghen/blink.cmp",
-    ---@module 'blink.cmp'
+    ---@module "blink.cmp"
     ---@type blink.cmp.Config
-    ---@diagnostic disable
     opts = {
       completion = {
         ghost_text = {
@@ -29,7 +28,9 @@ return {
           Color = LazyVim.config.icons.kinds.Color,
         },
       },
+      signature = {
+        enabled = true,
+      },
     },
-    ---@diagnostic enable
   },
 }
