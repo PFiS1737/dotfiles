@@ -6,6 +6,13 @@ end
 local M = {}
 
 -- ==================
+--      Options
+-- ==================
+
+vim.g.neovide_underline_stroke_scale = 2.0
+vim.g.neovide_cursor_unfocused_outline_width = 0.1
+
+-- ==================
 -- kitty like pasting
 -- ==================
 
@@ -58,7 +65,7 @@ vim.list_extend(M, {
 --    Transparency
 -- ==================
 
-local transparency = 50
+local transparency = 25
 
 vim.opt.winblend = transparency
 vim.opt.pumblend = transparency
