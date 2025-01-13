@@ -13,6 +13,27 @@ vim.g.neovide_underline_stroke_scale = 2.0
 vim.g.neovide_cursor_unfocused_outline_width = 0.1
 
 -- ==================
+--    Input Method
+-- ==================
+
+local ime_input_group = vim.api.nvim_create_augroup("ime_input", { clear = true })
+
+vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
+  group = ime_input_group,
+  pattern = "*",
+  callback = function()
+    vim.g.neovide_input_ime = true
+  end,
+})
+vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CmdlineLeave" }, {
+  group = ime_input_group,
+  pattern = "*",
+  callback = function()
+    vim.g.neovide_input_ime = false
+  end,
+})
+
+-- ==================
 -- kitty like pasting
 -- ==================
 
