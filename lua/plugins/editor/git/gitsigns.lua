@@ -57,12 +57,12 @@ return {
           desc = "This Hunk (by gitsigns)",
           mode = { "o", "x" },
         },
-        -- {
-        --   "ih",
-        --   ":<C-U>Gitsigns select_hunk<CR>",
-        --   desc = "This Hunk (by gitsigns)",
-        --   mode = { "o", "x" },
-        -- },
+        {
+          "ih",
+          ":<C-U>Gitsigns select_hunk<CR>",
+          desc = "This Hunk (by gitsigns)",
+          mode = { "o", "x" },
+        },
 
         -- Actions
         {
@@ -77,17 +77,24 @@ return {
           function()
             gitsigns.blame()
           end,
-          "Blame Buffer",
+          desc = "Blame Buffer",
+        },
+        {
+          "<leader>gb",
+          function() end, -- disable line blame provide by LazyVim
+          desc = "which_key_ignore",
         },
       }
     end,
     opts = {
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 50,
+      },
       on_attach = function(buffer)
         local gitsigns = require("gitsigns")
 
         local map = require("utils.keymap").create_map_for(buffer)
-
-        -- stylua: ignore start
 
         map("n", "<leader>ghs", gitsigns.stage_hunk, "Stage Hunk")
         map("n", "<leader>ghu", gitsigns.undo_stage_hunk, "Undo Stage Hunk")
@@ -103,8 +110,6 @@ return {
         -- I use diffview plugin
         -- map("n", "<leader>ghd", gitsigns.diffthis, "Diff This")
         -- map("n", "<leader>ghD", function() gitsigns.diffthis("~") end, "Diff This ~")
-
-        -- stylua: ignore end
       end,
     },
   },
