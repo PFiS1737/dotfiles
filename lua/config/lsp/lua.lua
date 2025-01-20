@@ -7,7 +7,7 @@ return {
     workspaceDelay = 100,
   },
   codeLens = {
-    enable = true,
+    enable = false,
   },
   completion = {
     callSnippet = "Replace",
