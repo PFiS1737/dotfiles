@@ -9,6 +9,7 @@ local M = {}
 --      Options
 -- ==================
 
+vim.g.neovide_scale_factor = 1
 vim.g.neovide_underline_stroke_scale = 2.0
 vim.g.neovide_cursor_unfocused_outline_width = 0.1
 
@@ -45,23 +46,31 @@ end, { desc = "Paste", noremap = true, silent = true })
 -- kitty like scaling
 -- ==================
 
-local function scale(scaler)
+local timer = 0
+local function scale(mode)
   return function()
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * scaler
+    -- stylua: ignore
+    timer = mode == "up"
+      and (timer + 1 > 4 and 4 or timer + 1)
+      or mode == "down"
+        and (timer - 1 < -4 and -4 or timer - 1)
+        or 0
+    vim.g.neovide_scale_factor =
+      math.pow(timer > 0 and 1.25 or timer < 0 and 0.8 or 1, math.abs(timer))
   end
 end
 
 vim.keymap.set(
   { "n", "v", "s", "x", "o", "i", "l", "c", "t" },
   "<c-+>",
-  scale(1.25),
-  { desc = "Scale down", noremap = true, silent = true }
+  scale("up"),
+  { desc = "Scale up", noremap = true, silent = true }
 )
 
 vim.keymap.set(
   { "v", "s", "x", "o", "i", "l", "c" },
   "<c-_>",
-  scale(0.8),
+  scale("down"),
   { desc = "Scale down", noremap = true, silent = true }
 )
 
@@ -73,7 +82,7 @@ vim.list_extend(M, {
     keys = {
       {
         "<C-_>",
-        scale(0.8),
+        scale("down"),
         desc = "Scale down",
         mode = { "n", "t" },
         remap = true,
@@ -86,7 +95,7 @@ vim.list_extend(M, {
       defaults = {
         mappings = {
           i = {
-            ["<C-_>"] = scale(0.8),
+            ["<C-_>"] = scale("down"),
           },
         },
       },
