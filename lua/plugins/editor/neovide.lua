@@ -80,6 +80,18 @@ vim.list_extend(M, {
       },
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-_>"] = scale(0.8),
+          },
+        },
+      },
+    },
+  },
 })
 
 -- ==================

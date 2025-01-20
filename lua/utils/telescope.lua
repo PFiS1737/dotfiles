@@ -24,18 +24,23 @@ function M.gen_mouse_action(key, action_name)
   end
 end
 
-function M.get_layout_config()
-  local output = {
-    horizontal = { preview_width = { 0.55, max = 100, min = 30 } },
-    vertical = { preview_cutoff = 20, preview_height = 0.5 },
+function M.get_layout()
+  local strategy = "flex"
+  local config = {
+    prompt_position = "top",
+    flip_columns = 120,
+    flip_lines = 40,
+    horizontal = {
+      preview_cutoff = 80,
+      preview_width = 0.5,
+    },
+    vertical = {
+      preview_cutoff = 40,
+      preview_height = 0.5,
+    },
   }
 
-  if vim.env.TERMUX_VERSION ~= nil then
-    -- the max columns in termux is 141
-    output.flex = { flip_columns = 140 }
-  end
-
-  return output
+  return strategy, config
 end
 
 return M

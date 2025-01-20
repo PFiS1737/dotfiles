@@ -13,6 +13,11 @@ return {
         end,
         desc = "Plugin files",
       },
+      {
+        "<leader>sp",
+        "<cmd>Telescope spell_suggest<cr>",
+        desc = "Show spelling suggestions",
+      },
     },
     opts = function(_, opts)
       -- set the prompt highlights back to default
@@ -27,15 +32,18 @@ return {
         ["<C-H>"] = require("telescope.actions").select_horizontal,
       }
 
+      local strategy, config = require("utils.telescope").get_layout()
+
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         prompt_prefix = "  ", -- use space as left padding
         selection_caret = " ",
         entry_prefix = " ",
         multi_icon = " ",
         -- wrap_results = true,
+        sorting_strategy = "ascending",
         scroll_strategy = "cycle", -- or "limit"
-        layout_strategy = "flex",
-        layout_config = require("utils.telescope").get_layout_config(),
+        layout_strategy = strategy,
+        layout_config = config,
         get_status_text = function(self, _opts)
           return get_status_text(self, _opts) .. " " -- add right padding
         end,

@@ -23,10 +23,6 @@ return {
               ["<LeftMouse>"] = false,
             },
           },
-          picker_opts = {
-            layout_strategy = "flex",
-            layout_config = require("utils.telescope").get_layout_config(),
-          },
         },
       },
     },
