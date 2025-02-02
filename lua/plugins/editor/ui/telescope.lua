@@ -27,9 +27,12 @@ return {
       -- get the default value of `get_status_text()`
       local get_status_text = require("telescope.config").values.get_status_text
 
+      local actions = require("telescope.actions")
       local keys = {
         ["<C-X>"] = false,
-        ["<C-H>"] = require("telescope.actions").select_horizontal,
+        ["<C-H>"] = actions.select_horizontal,
+        ["<C-Right>"] = actions.cycle_previewers_next,
+        ["<C-Left>"] = actions.cycle_previewers_prev,
       }
 
       local strategy, config = require("utils.telescope").get_layout()

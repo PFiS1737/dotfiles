@@ -27,6 +27,8 @@ end
 function M.get_layout()
   local strategy = "flex"
   local config = {
+    width = 0.8,
+    height = 0.8,
     prompt_position = "top",
     flip_columns = 120,
     flip_lines = 40,
