@@ -6,6 +6,14 @@ return {
       notifier = {
         style = "fancy",
       },
+      styles = {
+        notification = {
+          wo = {
+            -- remove `"extends:…`
+            listchars = "tab:  ",
+          },
+        },
+      },
     },
   },
 }

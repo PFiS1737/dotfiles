@@ -62,14 +62,14 @@ end
 
 vim.keymap.set(
   { "n", "v", "s", "x", "o", "i", "l", "c", "t" },
-  "<c-+>",
+  "<C-+>",
   scale("up"),
   { desc = "Scale up", noremap = true, silent = true }
 )
 
 vim.keymap.set(
   { "v", "s", "x", "o", "i", "l", "c" },
-  "<c-_>",
+  "<C-_>",
   scale("down"),
   { desc = "Scale down", noremap = true, silent = true }
 )
