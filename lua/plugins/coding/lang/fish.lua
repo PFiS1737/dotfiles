@@ -6,15 +6,15 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "ndonfris/fish-lsp",
-        build = "yarn install",
-      },
-    },
+    -- dependencies = {
+    --   {
+    --     "ndonfris/fish-lsp",
+    --     build = "yarn install",
+    --   },
+    -- },
     opts = {
       servers = {
-        fish_lsp = {},
+        -- fish_lsp = {},
       },
     },
   },
