@@ -50,7 +50,13 @@ return {
             telescope_grep = utils.telescope("live_grep"),
             move_left = function(state)
               require("neo-tree.sources.common.commands").close_all_subnodes(state)
-              require("neo-tree.sources.filesystem.commands").navigate_up(state)
+
+              local node = state.tree:get_node()
+              local path = node.path or node:get_id()
+
+              if path == state.path then
+                require("neo-tree.sources.filesystem.commands").navigate_up(state)
+              end
             end,
             move_to_trash = function(state)
               local node = state.tree:get_node()
