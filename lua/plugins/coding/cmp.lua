@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   {
     "saghen/blink.cmp",
@@ -23,14 +24,13 @@ return {
           },
         },
       },
-      appearance = {
-        kind_icons = {
-          Color = LazyVim.config.icons.kinds.Color,
-        },
-      },
-      signature = {
-        enabled = true,
-      },
+      -- signature = {
+      --   enabled = true,
+      --   window = {
+      --     scrollbar = false,
+      --     show_documentation = true,
+      --   },
+      -- },
     },
   },
 }
