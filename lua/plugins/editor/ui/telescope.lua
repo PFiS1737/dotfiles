@@ -41,7 +41,7 @@ return {
         prompt_prefix = "  ", -- use space as left padding
         selection_caret = " ",
         entry_prefix = " ",
-        multi_icon = " ",
+        multi_icon = " ", -- FIXME:
         -- wrap_results = true,
         sorting_strategy = "ascending",
         scroll_strategy = "cycle", -- or "limit"
