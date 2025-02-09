@@ -8,7 +8,7 @@ return {
     },
     event = "LspAttach",
     init = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get() or {}
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
 
       for i, cfg in ipairs(keys) do
         if cfg[1] == "<leader>ca" then
@@ -17,11 +17,9 @@ return {
           end
         end
       end
-
-      require("lazyvim.plugins.lsp.keymaps")._keys = keys
     end,
     opts = {
-      telescope = require("telescope.config"),
+      telescope = require("telescope.config").values,
     },
   },
 }
