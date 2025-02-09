@@ -2,23 +2,9 @@ local utils = require("utils.neotree")
 
 ---@type LazySpec
 return {
+  { import = "lazyvim.plugins.extras.editor.neo-tree" },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    -- keys = function(_, keys)
-    --   for i, key in ipairs(keys) do
-    --     if key[1] == "<leader>fe" then
-    --       keys[i][2] = function()
-    --         require("neo-tree.command").execute({
-    --           toggle = true,
-    --           dir = LazyVim.root(),
-    --           position = "float", -- added this
-    --         })
-    --       end
-    --     end
-    --   end
-    --
-    --   return keys
-    -- end,
     opts = function(_, opts)
       vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { link = "NeoTreeGitRenamed" })
       vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link = "NeoTreeGitDeleted" })
