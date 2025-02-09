@@ -8,6 +8,8 @@ end
 -- ==================
 --   Lazyvim Config
 -- ==================
+
+vim.g.lazyvim_check_order = false
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_blink_main = true
 
