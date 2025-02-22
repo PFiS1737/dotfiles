@@ -52,12 +52,14 @@ return {
               if node.type == "file" or node.type == "directory" then
                 require("neo-tree.ui.inputs").confirm(
                   "Are you want to move '" .. name .. "' to trash?",
-                  function()
-                    vim.system(
-                      { "kioclient", "move", path, "trash:/" },
-                      { text = true, stdout = false }
-                    )
-                    print("Moved '" .. name .. "' to trash.")
+                  function(value)
+                    if value then
+                      vim.system(
+                        { "kioclient", "move", path, "trash:/" },
+                        { text = true, stdout = false }
+                      )
+                      print("Moved '" .. name .. "' to trash.")
+                    end
                   end
                 )
               else
