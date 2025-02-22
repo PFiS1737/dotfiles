@@ -10,7 +10,8 @@ local M = {}
 -- ==================
 
 vim.g.neovide_scale_factor = 1
-vim.g.neovide_underline_stroke_scale = 2.0
+vim.g.neovide_padding_left = 6
+vim.g.neovide_underline_stroke_scale = 2
 vim.g.neovide_cursor_unfocused_outline_width = 0.1
 
 -- ==================
