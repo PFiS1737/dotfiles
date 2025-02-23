@@ -1,5 +1,3 @@
-local utils = require("utils.neotree")
-
 ---@type LazySpec
 return {
   { import = "lazyvim.plugins.extras.editor.neo-tree" },
@@ -21,19 +19,12 @@ return {
               ["<left>"] = "move_left",
               ["<right>"] = "set_root",
 
-              -- telescope
-              ["f"] = false,
-              ["ff"] = "telescope_find",
-              ["fg"] = "telescope_grep",
-
               -- delete
               ["d"] = "move_to_trash",
               ["D"] = "delete",
             },
           },
           commands = {
-            telescope_find = utils.telescope("find_files"),
-            telescope_grep = utils.telescope("live_grep"),
             move_left = function(state)
               require("neo-tree.sources.common.commands").close_all_subnodes(state)
 

@@ -2,10 +2,6 @@
 return {
   {
     "aznhe21/actions-preview.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "MunifTanjim/nui.nvim",
-    },
     event = "LspAttach",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
@@ -19,7 +15,7 @@ return {
       end
     end,
     opts = {
-      telescope = require("telescope.config").values,
+      backend = { "nui" },
     },
   },
 }

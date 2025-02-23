@@ -23,12 +23,14 @@ return {
     },
   },
   {
-    "nvim-telescope/telescope.nvim",
+    "folke/snacks.nvim",
     keys = {
       { "<leader>sR", false },
       {
         "<leader>s<c-r>",
-        "<cmd>Telescope resume<cr>",
+        function()
+          Snacks.picker.resume()
+        end,
         desc = "Resume",
       },
     },

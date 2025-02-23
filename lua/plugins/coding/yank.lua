@@ -10,7 +10,7 @@ return {
         {
           "<leader>sy",
           function()
-            require("telescope").extensions.yank_history.yank_history({})
+            vim.cmd([[YankyRingHistory]])
           end,
           desc = "Yank History",
         },

@@ -10,7 +10,7 @@ end
 -- ==================
 
 vim.g.lazyvim_check_order = false
-vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_picker = "snacks"
 vim.g.lazyvim_blink_main = true
 
 -- ==================

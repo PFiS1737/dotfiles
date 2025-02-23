@@ -17,20 +17,6 @@ return {
         end,
         desc = "Lazygit Current File History",
       },
-      {
-        "<leader>gl",
-        function()
-          Snacks.lazygit({
-            args = { "log" },
-          })
-        end,
-        desc = "Lazygit Log",
-      },
-      {
-        "<leader>gL",
-        function() end, -- disable cwd log provide by LazyVim
-        desc = "which_key_ignore",
-      },
     },
   },
 }

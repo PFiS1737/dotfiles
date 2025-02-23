@@ -4,7 +4,6 @@ return {
     "Bekaboo/dropbar.nvim",
     event = "LazyFile",
     dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
       "nvim-tree/nvim-web-devicons",
     },
     keys = {

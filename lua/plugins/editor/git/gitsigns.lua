@@ -59,11 +59,6 @@ return {
           end,
           desc = "Blame Buffer",
         },
-        {
-          "<leader>gb",
-          function() end, -- disable line blame provide by LazyVim
-          desc = "which_key_ignore",
-        },
       }
     end,
     opts = {

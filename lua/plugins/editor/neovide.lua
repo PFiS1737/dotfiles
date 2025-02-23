@@ -90,18 +90,6 @@ vim.list_extend(M, {
       },
     },
   },
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        mappings = {
-          i = {
-            ["<C-_>"] = scale("down"),
-          },
-        },
-      },
-    },
-  },
 })
 
 -- ==================
@@ -113,14 +101,6 @@ local transparency = 25
 vim.opt.winblend = transparency
 vim.opt.pumblend = transparency
 vim.list_extend(M, {
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        winblend = transparency,
-      },
-    },
-  },
   {
     "saghen/blink.cmp",
     ---@module "blink.cmp"

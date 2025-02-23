@@ -1,11 +1,14 @@
 ---@type LazySpec
 return {
-  { import = "lazyvim.plugins.extras.util.project" },
   {
     "ahmedkhalf/project.nvim",
+    event = "VeryLazy",
     opts = {
       manual_mode = false,
       silent_chdir = false,
     },
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
+    end,
   },
 }

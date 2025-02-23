@@ -5,7 +5,6 @@ return {
     enabled = false, -- prefer to use lazygit
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
     cmd = { "Neogit" },
