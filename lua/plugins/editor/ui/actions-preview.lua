@@ -15,7 +15,25 @@ return {
       end
     end,
     opts = {
-      backend = { "nui" },
+      ---@type snacks.picker.Config
+      snacks = {
+        preview = function(ctx)
+          local item = ctx.item
+          item.action:preview(function(preview)
+            if preview.cmdline then
+              ctx.preview:notify(
+                "Please keep `highlight_command` empty to use Snacks' builtin diff preview.",
+                "warn"
+              )
+            elseif preview.syntax ~= "" then
+              ctx.item.diff = table.concat(preview.lines, "\n")
+              Snacks.picker.preview.diff(ctx)
+            else
+              ctx.preview:notify(preview.lines[1], "info", { item = true })
+            end
+          end)
+        end,
+      },
     },
   },
 }
