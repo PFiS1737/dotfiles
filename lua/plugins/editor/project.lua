@@ -11,4 +11,16 @@ return {
       require("project_nvim").setup(opts)
     end,
   },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          objects = {
+            dev = { "~/dev", "~/repos", "~/projects" },
+          },
+        },
+      },
+    },
+  },
 }

@@ -37,7 +37,14 @@ return {
       vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { link = "SnacksPickerBorder" })
       vim.api.nvim_set_hl(0, "SnacksPickerInputTitle", { link = "SnacksPickerTitle" })
 
-      return vim.tbl_deep_extend("force", opts or {}, {
+      -- don't use loaded buffer in any case
+      local preview_file = Snacks.picker.preview.file
+      Snacks.picker.preview.file = function(ctx)
+        ctx.item.buf = false
+        preview_file(ctx)
+      end
+
+      local ret = vim.tbl_deep_extend("force", opts or {}, {
         picker = {
           prompt = "  ",
           layout = {
@@ -54,14 +61,13 @@ return {
             unselected = false,
           },
           file = {
-            truncate = 60,
+            truncate = 80,
           },
           win = {
             preview = {
               wo = {
                 number = false,
                 signcolumn = "no",
-                winbar = "",
               },
             },
           },
@@ -72,30 +78,12 @@ return {
             },
           },
           sources = {
-            -- use 'select' layout instead of 'vscode'
-            spelling = {
-              layout = { preset = "select" },
-            },
-            command_history = {
-              layout = { preset = "select" },
-            },
-            search_history = {
-              layout = { preset = "select" },
-            },
-            icons = {
-              layout = { preset = "select" },
-            },
-
             -- use 'default' layout instead of 'ivy'
             lines = {
               layout = {
                 preview = false,
                 preset = "default",
               },
-            },
-
-            objects = {
-              dev = { "~/dev", "~/repo", "~/projects", "~/Projects" },
             },
 
             -- enchance Lazy Spec entry format
@@ -156,7 +144,7 @@ return {
                 },
                 {
                   win = "preview",
-                  title = "{preview:Preview}",
+                  title = "Preview",
                   width = 0.55,
                   border = "rounded",
                   title_pos = "center",
@@ -172,7 +160,7 @@ return {
                 border = "none",
                 {
                   win = "preview",
-                  title = "{preview:Preview}",
+                  title = "Preview",
                   height = 0.5,
                   border = "rounded",
                   title_pos = "center",
@@ -199,8 +187,6 @@ return {
                 backdrop = false,
                 width = 0.5,
                 min_width = 40,
-                height = 0.5,
-                min_height = 16,
                 border = "none",
                 {
                   win = "input",
@@ -212,12 +198,22 @@ return {
                 {
                   win = "list",
                   border = "rounded",
+                  min_height = 12,
                 },
               },
             },
           },
         },
       })
+
+      for name, cfg in pairs(require("snacks.picker.config.sources")) do
+        -- use 'select' layout instead of 'vscode'
+        if cfg.layout and cfg.layout.preset == "vscode" then
+          ret.picker.sources[name] = { layout = { preset = "select" } }
+        end
+      end
+
+      return ret
     end,
   },
 }
