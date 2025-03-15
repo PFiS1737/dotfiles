@@ -18,8 +18,7 @@ return {
       ---@type snacks.picker.Config
       snacks = {
         preview = function(ctx)
-          local item = ctx.item
-          item.action:preview(function(preview)
+          ctx.item.action:preview(function(preview)
             if preview.cmdline then
               ctx.preview:notify(
                 "Please keep `highlight_command` empty to use Snacks' builtin diff preview.",
