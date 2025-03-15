@@ -187,6 +187,7 @@ return {
                 backdrop = false,
                 width = 0.5,
                 min_width = 40,
+                min_height = 12,
                 border = "none",
                 {
                   win = "input",
@@ -198,7 +199,6 @@ return {
                 {
                   win = "list",
                   border = "rounded",
-                  min_height = 12,
                 },
               },
             },
