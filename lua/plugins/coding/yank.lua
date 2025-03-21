@@ -10,8 +10,9 @@ return {
         {
           "<leader>sy",
           function()
-            vim.cmd([[YankyRingHistory]])
+            Snacks.picker.yanky()
           end,
+          mode = { "n", "x" },
           desc = "Yank History",
         },
         { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank Text" },
