@@ -33,6 +33,13 @@ return {
           on_attach = function(_, buffer)
             local map = require("utils.keymap").create_map_for(buffer, "n")
 
+            -- `textDocument/hover` got deprecated
+            -- see https://github.com/mrcjkb/rustaceanvim/issues/556#issuecomment-2447859092
+            map("K", "<cmd>RustLsp hover actions<cr>", "Hover actions (Rust)")
+
+            map("<leader>ce", "<cmd>RustLsp expandMacro<cr>", "Expand Macro (Rust)")
+            map("<leader>co", "<cmd>RustLsp openDocs<cr>", "Open Docs (Rust)")
+            map("<leader>cO", "<cmd>RustLsp openCargo<cr>", "Open Cargo.toml (Rust)")
             map("<leader>c<c-r>", "<cmd>RustLsp run<cr>", "Run (Rust)")
             map("<leader>dd", "<cmd>RustLsp debug<cr>", "Start debug (Rust)")
             map("<leader>c<a-r>", "<cmd>RustLsp runnables<cr>", "Runnables (Rust)")
