@@ -188,6 +188,7 @@ return {
                 width = 0.5,
                 min_width = 40,
                 min_height = 12,
+                max_height = 30,
                 border = "none",
                 {
                   win = "input",
