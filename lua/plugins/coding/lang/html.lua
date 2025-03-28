@@ -8,7 +8,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        -- FIXME: need to install superhtml by yourself. (yay -S superhtml)
         superhtml = {},
       },
     },
