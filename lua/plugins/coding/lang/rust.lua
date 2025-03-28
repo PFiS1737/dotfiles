@@ -8,9 +8,9 @@ return {
     opts = function(_, opts)
       opts = vim.tbl_deep_extend("force", opts or {}, {
         tools = {
-          executor = "toggleterm",
-          test_executor = "toggleterm",
-          crate_test_executor = "toggleterm",
+          executor = "termopen",
+          test_executor = "neotest",
+          crate_test_executor = "neotest",
           float_win_config = {
             max_width = 80,
             max_height = 20,
