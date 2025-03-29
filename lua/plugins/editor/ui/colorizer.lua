@@ -3,18 +3,14 @@ return {
   {
     "uga-rosa/ccc.nvim",
     cmd = {
-      -- "CccPick",
-      -- "CccConvert",
+      "CccPick",
+      "CccConvert",
       "CccHighlighterToggle",
     },
     keys = {
-      {
-        "<leader>zc",
-        "<cmd>CccHighlighterToggle<cr>",
-        desc = "Toggle colorizer",
-      },
-      -- { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick Color" },
-      -- { "<leader>z<c-c>", "<cmd>CccConvert<cr>", desc = "Convert color" },
+      { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick Color" },
+      { "<leader>zC", "<cmd>CccConvert<cr>", desc = "Convert color" },
+      { "<leader>zc", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle colorizer" },
     },
     opts = function()
       local ccc = require("ccc")
