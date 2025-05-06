@@ -24,6 +24,24 @@ return {
           },
         },
       },
+      cmdline = {
+        enabled = true,
+        completion = {
+          list = {
+            selection = {
+              preselect = false,
+            },
+          },
+          ghost_text = {
+            enabled = false,
+          },
+          menu = {
+            auto_show = function(_)
+              return vim.fn.getcmdtype() == ":"
+            end,
+          },
+        },
+      },
       -- signature = {
       --   enabled = true,
       --   window = {
