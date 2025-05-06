@@ -20,14 +20,14 @@ vim.g.neovide_cursor_unfocused_outline_width = 0.1
 
 local ime_input_group = vim.api.nvim_create_augroup("ime_input", { clear = true })
 
-vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
+vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter", "TermEnter" }, {
   group = ime_input_group,
   pattern = "*",
   callback = function()
     vim.g.neovide_input_ime = true
   end,
 })
-vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CmdlineLeave" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CmdlineLeave", "TermLeave" }, {
   group = ime_input_group,
   pattern = "*",
   callback = function()
