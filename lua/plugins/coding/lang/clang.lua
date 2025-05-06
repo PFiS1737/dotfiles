@@ -7,6 +7,7 @@ return {
     opts = {
       servers = {
         clangd = {
+          mason = false, -- installed by system package manager
           on_attach = function()
             local cwd = LazyVim.root()
             local dap = require("dap")
