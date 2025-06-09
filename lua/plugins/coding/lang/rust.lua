@@ -41,7 +41,7 @@ return {
             map("<leader>co", "<cmd>RustLsp openDocs<cr>", "Open Docs (Rust)")
             map("<leader>cO", "<cmd>RustLsp openCargo<cr>", "Open Cargo.toml (Rust)")
             map("<leader>c<c-r>", "<cmd>RustLsp run<cr>", "Run (Rust)")
-            map("<leader>dd", "<cmd>RustLsp debug<cr>", "Start debug (Rust)")
+            map("<leader>dd", "<cmd>RustLsp debug<cr>", "Debug (Rust)")
             map("<leader>c<a-r>", "<cmd>RustLsp runnables<cr>", "Runnables (Rust)")
             map("<leader>dR", "<cmd>RustLsp debuggables<cr>", "Debuggables (Rust)")
             map("<leader>tR", "<cmd>RustLsp testables<cr>", "Testables (Rust)")
