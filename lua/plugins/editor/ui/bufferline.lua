@@ -22,5 +22,14 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("bufferline").setup(opts)
+
+      vim.api.nvim_set_hl(
+        0,
+        "BufferLineIndicatorSelected",
+        { link = "BufferLineTabSelected" }
+      )
+    end,
   },
 }
