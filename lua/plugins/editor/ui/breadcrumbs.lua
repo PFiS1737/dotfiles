@@ -15,21 +15,31 @@ return {
         desc = "Pick Breadcrumbs",
       },
     },
-    opts = {
-      icons = {
-        ui = {
-          bar = {
-            separator = "  ",
+    opts = function()
+      local enable = require("dropbar.configs").opts.bar.enable
+
+      ---@type dropbar_configs_t
+      return {
+        bar = {
+          enable = function(buf, win, _)
+            return vim.bo[buf].bt ~= "terminal" and enable(buf, win, _)
+          end,
+        },
+        icons = {
+          ui = {
+            bar = {
+              separator = "  ",
+            },
           },
         },
-      },
-      menu = {
-        preview = false,
-        quick_navigation = false,
-        scrollbar = {
-          enable = false,
+        menu = {
+          preview = false,
+          quick_navigation = false,
+          scrollbar = {
+            enable = false,
+          },
         },
-      },
-    },
+      }
+    end,
   },
 }
