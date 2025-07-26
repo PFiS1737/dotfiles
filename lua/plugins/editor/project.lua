@@ -18,7 +18,12 @@ return {
       picker = {
         sources = {
           objects = {
-            dev = { "~/dev", "~/repos", "~/projects" },
+            dev = {
+              "~/Development/repos",
+              "~/Development/hello",
+              "~/Development/games",
+              "~/Development/projects",
+            },
           },
         },
       },
