@@ -19,6 +19,7 @@ return {
     opts = function()
       local enable = require("dropbar.configs").opts.bar.enable
 
+      ---@module "dropbar"
       ---@type dropbar_configs_t
       return {
         bar = {

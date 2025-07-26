@@ -3,11 +3,6 @@
 return {
   {
     "uga-rosa/ccc.nvim",
-    cmd = {
-      "CccPick",
-      "CccConvert",
-      "CccHighlighterToggle",
-    },
     keys = {
       { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick Color" },
       { "<leader>zC", "<cmd>CccConvert<cr>", desc = "Convert color" },

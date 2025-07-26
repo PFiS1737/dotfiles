@@ -4,7 +4,6 @@ return {
   { import = "lazyvim.plugins.extras.editor.snacks_picker" },
   {
     "folke/snacks.nvim",
-    dependencies = { "polirritmico/telescope-lazy-plugins.nvim" },
     keys = {
       {
         "<leader>fP",
