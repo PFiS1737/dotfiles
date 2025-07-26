@@ -20,6 +20,7 @@ return {
         -- use the biome lsp server
         biome = {
           -- prefer to use biome from the local node_modules
+          mason = false,
           cmd = { "./node_modules/.bin/biome", "lsp-proxy" },
           filetypes = ft,
         },
