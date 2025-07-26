@@ -13,6 +13,7 @@ local icons = {
   },
 }
 
+---@module "lazy"
 ---@type LazySpec
 return {
   {

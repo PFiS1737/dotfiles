@@ -1,3 +1,4 @@
+---@module "lazy"
 ---@type LazySpec
 return {
   { import = "plugins.coding" },

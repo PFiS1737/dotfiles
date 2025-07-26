@@ -10,6 +10,7 @@ local ft = {
   "graphql",
 }
 
+---@module "lazy"
 ---@type LazySpec
 return {
   {

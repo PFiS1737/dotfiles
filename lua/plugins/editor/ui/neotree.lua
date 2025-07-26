@@ -1,8 +1,11 @@
+---@module "lazy"
 ---@type LazySpec
 return {
   { import = "lazyvim.plugins.extras.editor.neo-tree" },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    ---@module "neo-tree"
+    ---@param opts neotree.Config
     opts = function(_, opts)
       vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { link = "NeoTreeGitRenamed" })
       vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link = "NeoTreeGitDeleted" })

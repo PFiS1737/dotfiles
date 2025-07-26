@@ -1,5 +1,6 @@
 local path = require("utils.path")
 
+---@module "lazy"
 ---@type LazySpec
 return {
   {

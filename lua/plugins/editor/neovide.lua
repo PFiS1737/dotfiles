@@ -2,7 +2,8 @@ if not vim.g.neovide then
   return {}
 end
 
----@type LazyPluginSpec[]
+---@module "lazy"
+---@type LazySpec
 local M = {}
 
 -- ==================

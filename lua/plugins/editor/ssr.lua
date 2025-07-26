@@ -1,6 +1,7 @@
 -- INFO: You can write a comment like `// add($a, $b) ==>> $a.add($b)` and run it as
 --       a code action in rust.
 
+---@module "lazy"
 ---@type LazySpec
 return {
   {
