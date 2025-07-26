@@ -10,6 +10,11 @@ return {
     opts = {
       servers = {
         superhtml = {},
+        emmet_language_server = {
+          init_options = {
+            -- showSuggestionsAsSnippets = true,
+          },
+        },
       },
     },
   },
