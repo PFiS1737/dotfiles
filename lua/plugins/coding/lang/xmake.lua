@@ -66,7 +66,6 @@ return {
             local xmake = require("xmake")
             xmake.info.defer_reload("mode")
             xmake.info.defer_reload("target")
-            xmake.action.project("kind", "compile_commands")
           end
         end,
       })
