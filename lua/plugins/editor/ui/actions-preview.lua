@@ -6,14 +6,15 @@ return {
     event = "LspAttach",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-
-      for i, cfg in ipairs(keys) do
-        if cfg[1] == "<leader>ca" then
-          keys[i][2] = function()
-            require("actions-preview").code_actions()
-          end
-        end
-      end
+      keys[#keys + 1] = {
+        "<leader>ca",
+        function()
+          require("actions-preview").code_actions()
+        end,
+        desc = "Code Action",
+        mode = { "n", "v" },
+        has = "codeAction",
+      }
     end,
     opts = {
       ---@type snacks.picker.Config
