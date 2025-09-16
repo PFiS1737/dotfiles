@@ -7,7 +7,7 @@ return {
     "mrcjkb/rustaceanvim",
     lazy = false,
     opts = function(_, opts)
-      opts = vim.tbl_deep_extend("force", opts or {}, {
+      opts = vim.tbl_deep_extend("force", {}, opts or {}, {
         tools = {
           executor = "termopen",
           test_executor = "neotest",
@@ -28,9 +28,6 @@ return {
           },
         },
         server = {
-          default_settings = {
-            ["rust-analyzer"] = require("config.lsp.rust-analyzer"),
-          },
           on_attach = function(_, buffer)
             local map = require("utils.keymap").create_map_for(buffer, "n")
 
@@ -61,6 +58,8 @@ return {
           },
         }
       end
+
+      opts.server.default_settings["rust-analyzer"] = require("config.lsp.rust-analyzer")
 
       return opts
     end,

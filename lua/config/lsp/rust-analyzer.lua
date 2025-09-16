@@ -1,4 +1,7 @@
 return {
+  assist = {
+    preferSelf = true,
+  },
   cargo = {
     allFeatures = true,
     loadOutDirsFromCheck = true,
@@ -7,9 +10,6 @@ return {
     },
   },
   checkOnSave = true,
-  procMacro = {
-    enable = true,
-  },
   diagnostics = {
     experimental = {
       enable = true,
@@ -17,5 +17,8 @@ return {
     styleLints = {
       enable = true,
     },
+  },
+  procMacro = {
+    enable = true,
   },
 }
