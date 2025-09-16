@@ -17,7 +17,7 @@ local icons = {
 ---@type LazySpec
 return {
   {
-    "mini.icons",
+    "nvim-mini/mini.icons",
     enabled = false,
   },
   {
