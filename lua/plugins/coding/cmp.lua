@@ -26,7 +26,6 @@ return {
         },
       },
       cmdline = {
-        enabled = true,
         completion = {
           list = {
             selection = {
@@ -35,11 +34,6 @@ return {
           },
           ghost_text = {
             enabled = false,
-          },
-          menu = {
-            auto_show = function(_)
-              return vim.fn.getcmdtype() == ":"
-            end,
           },
         },
       },
