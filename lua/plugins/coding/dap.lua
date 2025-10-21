@@ -7,7 +7,7 @@ return {
     "jbyuki/one-small-step-for-vimkind",
     keys = {
       {
-        "<laeder>dL",
+        "<leader>dL",
         function()
           require("osv").launch({ port = 8086 })
         end,
