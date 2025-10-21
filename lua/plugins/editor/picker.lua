@@ -187,6 +187,7 @@ return {
                 backdrop = false,
                 width = 0.5,
                 min_width = 40,
+                height = 0.5,
                 min_height = 12,
                 max_height = 30,
                 border = "none",
@@ -199,6 +200,7 @@ return {
                 },
                 {
                   win = "list",
+                  min_height = 8,
                   border = "rounded",
                 },
               },
