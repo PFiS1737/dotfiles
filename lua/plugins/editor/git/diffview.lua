@@ -4,16 +4,16 @@ return {
   {
     "sindrets/diffview.nvim",
     keys = {
-      { "<leader>gD", "<cmd>DiffviewOpen<cr>", desc = "Open diffview" },
-      {
-        "<leader>g<c-h>",
-        "<cmd>DiffviewFileHistory<cr>",
-        desc = "Open file history (current branch)",
-      },
+      { "<leader>gD", "<cmd>DiffviewOpen<cr>", desc = "Diffview: status" },
       {
         "<leader>gH",
+        "<cmd>DiffviewFileHistory<cr>",
+        desc = "Diffview: git log",
+      },
+      {
+        "<leader>g<c-h>",
         "<cmd>DiffviewFileHistory %<cr>",
-        desc = "Open file history (current file)",
+        desc = "Diffview: file history",
       },
     },
     opts = function()

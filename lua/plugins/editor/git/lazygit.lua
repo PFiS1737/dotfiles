@@ -7,7 +7,7 @@ return {
     "folke/snacks.nvim",
     keys = {
       {
-        "<leader>gf",
+        "<leader>gF",
         function()
           Snacks.lazygit({
             args = {
