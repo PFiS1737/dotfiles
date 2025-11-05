@@ -8,6 +8,10 @@ local ft = {
   "jsonc",
   "css",
   "graphql",
+  "html",
+  "astro",
+  "vue",
+  "svelte",
 }
 
 ---@module "lazy"

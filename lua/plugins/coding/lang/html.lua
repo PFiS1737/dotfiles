@@ -9,7 +9,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        superhtml = {},
         emmet_language_server = {
           init_options = {
             -- showSuggestionsAsSnippets = true,
