@@ -32,7 +32,9 @@ return {
         desc = "Show spelling suggestions",
       },
     },
-    opts = function(_, opts)
+    config = function(_, opts)
+      require("snacks").setup(opts)
+
       vim.api.nvim_set_hl(0, "SnacksPickerPrompt", { link = "Conditional" })
       vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { link = "SnacksPickerBorder" })
       vim.api.nvim_set_hl(0, "SnacksPickerInputTitle", { link = "SnacksPickerTitle" })
@@ -53,7 +55,8 @@ return {
         table.insert(ret, 1, {})
         return ret
       end
-
+    end,
+    opts = function(_, opts)
       local ret = vim.tbl_deep_extend("force", opts or {}, {
         ---@type snacks.picker.Config
         picker = {
