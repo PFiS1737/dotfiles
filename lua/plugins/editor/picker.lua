@@ -37,11 +37,21 @@ return {
       vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { link = "SnacksPickerBorder" })
       vim.api.nvim_set_hl(0, "SnacksPickerInputTitle", { link = "SnacksPickerTitle" })
 
-      -- don't use loaded buffer in any case
-      local preview_file = Snacks.picker.preview.file
-      Snacks.picker.preview.file = function(ctx)
+      -- HACK: Don't use loaded buffer in any case
+      local preview_file = require("snacks.picker.preview").file
+      ---@diagnostic disable-next-line: duplicate-set-field
+      require("snacks.picker.preview").file = function(ctx)
         ctx.item.buf = false
         preview_file(ctx)
+      end
+
+      -- HACK: Add additional blank line before block header
+      local format_block_header = require("snacks.picker.util.diff").format_block_header
+      ---@diagnostic disable-next-line: duplicate-set-field
+      require("snacks.picker.util.diff").format_block_header = function(ctx)
+        local ret = format_block_header(ctx)
+        table.insert(ret, 1, {})
+        return ret
       end
 
       local ret = vim.tbl_deep_extend("force", opts or {}, {
