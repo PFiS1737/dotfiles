@@ -45,6 +45,7 @@ return {
       end
 
       local ret = vim.tbl_deep_extend("force", opts or {}, {
+        ---@type snacks.picker.Config
         picker = {
           prompt = "  ",
           layout = {
@@ -81,7 +82,7 @@ return {
             -- use 'default' layout instead of 'ivy'
             lines = {
               layout = {
-                preview = false,
+                hidden = { "preview" },
                 preset = "default",
               },
             },
@@ -181,7 +182,7 @@ return {
               },
             },
             select = {
-              preview = false,
+              hidden = { "preview" },
               layout = {
                 box = "vertical",
                 backdrop = false,
