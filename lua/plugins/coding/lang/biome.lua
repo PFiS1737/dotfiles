@@ -9,9 +9,6 @@ local ft = {
   "css",
   "graphql",
   "html",
-  "astro",
-  "vue",
-  "svelte",
 }
 
 ---@module "lazy"
@@ -21,12 +18,10 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        -- use the biome lsp server
+        -- enable the biome lsp server
         biome = {
           -- prefer to use biome from the local node_modules
           mason = false,
-          cmd = { "./node_modules/.bin/biome", "lsp-proxy" },
-          filetypes = ft,
         },
       },
     },
@@ -34,9 +29,15 @@ return {
   {
     "stevearc/conform.nvim",
     opts = function(_, opts)
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
       for _, f in ipairs(ft) do
         opts.formatters_by_ft[f] = { "biome-check" }
       end
+
+      opts.formatters = opts.formatters or {}
+      opts.formatters["biome-check"] = {
+        require_cwd = true,
+      }
     end,
   },
 }
