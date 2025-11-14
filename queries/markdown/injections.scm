@@ -1,0 +1,18 @@
+; extends
+
+; MDX support
+
+((inline) @injection.content
+  (#lua-match? @injection.content "^%s*import")
+  (#set! injection.language "typescriptreact"))
+
+((inline) @injection.content
+  (#lua-match? @injection.content "^%s*export")
+  (#set! injection.language "typescriptreact"))
+
+((inline) @injection.content
+  (#lua-match? @injection.content "^<")
+  (#set! injection.language "typescriptreact"))
+
+((html_block) @injection.content
+  (#set! injection.language "typescriptreact"))

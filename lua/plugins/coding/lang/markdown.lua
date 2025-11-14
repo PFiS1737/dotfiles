@@ -4,7 +4,9 @@ return {
   { import = "lazyvim.plugins.extras.lang.markdown" },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "markdown.mdx", "norg", "rmd", "org", "codecompanion" },
     opts = {
+      file_types = { "markdown", "markdown.mdx" },
       nested = false,
       win_options = {
         conceallevel = {
