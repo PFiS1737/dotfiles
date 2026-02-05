@@ -3,7 +3,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "css", "scss" } },
+    opts = { ensure_installed = { "css", "scss", "styled" } },
   },
   {
     "neovim/nvim-lspconfig",
