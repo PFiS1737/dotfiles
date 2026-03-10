@@ -9,6 +9,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        cssls = {},
         css_variables = {},
         cssmodules_ls = {},
         somesass_ls = {
@@ -17,5 +18,11 @@ return {
         },
       },
     },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = function()
+      vim.treesitter.language.register("scss", "less")
+    end,
   },
 }
