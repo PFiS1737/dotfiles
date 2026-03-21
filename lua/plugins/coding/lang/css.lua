@@ -9,7 +9,14 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        cssls = {},
+        cssls = {
+          settings = {
+            -- validate via biome
+            css = { validate = false },
+            scss = { validate = false },
+            less = { validate = false },
+          },
+        },
         css_variables = {},
         cssmodules_ls = {},
         somesass_ls = {
