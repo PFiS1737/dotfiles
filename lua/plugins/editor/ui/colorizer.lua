@@ -14,7 +14,10 @@ return {
           hex = {
             rgb = false,
             rgba = false,
+            hash_aarrggbb = false,
+            aarrggbb = false,
           },
+          names = { enable = false },
           css = true,
           css_fn = true,
           sass = { enable = true },
