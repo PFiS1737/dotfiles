@@ -8,8 +8,21 @@ return {
       servers = {
         tinymist = {
           settings = {
-            -- exportPdf = "onSave", -- onType, onSave or never.
+            exportPdf = "onSave", -- onType, onSave or never.
           },
+        },
+      },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      image = {
+        -- doc = {
+        --   conceal = false, -- don't work for math
+        -- },
+        math = {
+          enabled = false,
         },
       },
     },
