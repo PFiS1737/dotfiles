@@ -24,7 +24,9 @@ return {
       return {
         bar = {
           enable = function(buf, win, _)
-            return vim.bo[buf].bt ~= "terminal" and enable(buf, win, _)
+            return vim.bo[buf].bt ~= "terminal"
+              and vim.bo[buf].ft ~= "neo-tree"
+              and enable(buf, win, _)
           end,
         },
         icons = {
