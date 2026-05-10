@@ -31,8 +31,6 @@ return {
       dev_log = { enabled = false },
       -- debugger = { enabled = true },
       lsp = {
-        --- use `ccc.nvim` instaed
-        color = { enabled = false },
         settings = {
           showTodos = false,
           completeFunctionCalls = true,
