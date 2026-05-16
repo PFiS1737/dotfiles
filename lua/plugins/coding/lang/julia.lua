@@ -1,7 +1,6 @@
 ---@module "lazy"
 ---@type LazySpec
 return {
-  { import = "lazyvim.plugins.extras.lang.toml" },
   { import = "lazyvim.plugins.extras.lang.julia" },
   {
     "nvim-treesitter/nvim-treesitter",

@@ -2,7 +2,6 @@
 ---@type LazySpec
 return {
   { import = "lazyvim.plugins.extras.lang.rust" },
-  { import = "lazyvim.plugins.extras.lang.toml" },
   {
     "mrcjkb/rustaceanvim",
     lazy = false,
