@@ -3,6 +3,13 @@
 return {
   {
     "saghen/blink.cmp",
+    -- See https://github.com/LazyVim/LazyVim/pull/7139
+    build = vim.g.lazyvim_blink_main and function()
+      require("blink.cmp").build():pwait()
+    end,
+    dependencies = {
+      vim.g.lazyvim_blink_main and { "saghen/blink.lib" } or {},
+    },
     ---@module "blink.cmp"
     ---@type blink.cmp.Config
     opts = {
