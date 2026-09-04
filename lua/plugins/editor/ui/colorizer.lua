@@ -6,6 +6,7 @@ return {
     keys = {
       { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick Color" },
       { "<leader>zC", "<cmd>CccConvert<cr>", desc = "Convert color" },
+      { "<leader>zc", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle colorizer" },
     },
     opts = function()
       local ccc = require("ccc")
