@@ -4,7 +4,8 @@ return {
   {
     "akinsho/bufferline.nvim",
     keys = {
-      { "gb", "<cmd>BufferLinePick<cr>", desc = "Pick buffer" },
+      { "<leader>bj", false }, -- remove the default keymap for picking buffers
+      { "gb", "<cmd>BufferLinePick<cr>", desc = "Pick Buffer" },
     },
     opts = {
       options = {
