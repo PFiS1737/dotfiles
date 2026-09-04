@@ -23,11 +23,18 @@ return {
       ---@type dropbar_configs_t
       return {
         bar = {
-          enable = function(buf, win, _)
+          enable = function(buf, win, info)
             return vim.bo[buf].bt ~= "terminal"
               and vim.bo[buf].ft ~= "neo-tree"
-              and enable(buf, win, _)
+              and enable(buf, win, info)
           end,
+        },
+        sources = {
+          path = {
+            relative_to = function(buf, _)
+              return LazyVim.root.get({ buf = buf })
+            end,
+          },
         },
         icons = {
           ui = {
