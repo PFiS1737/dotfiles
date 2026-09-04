@@ -9,6 +9,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "tokyonight" } },
   checker = { enabled = false },
+  git = { timeout = 600 },
   performance = {
     rtp = {
       disabled_plugins = {
