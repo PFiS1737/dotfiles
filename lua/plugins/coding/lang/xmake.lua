@@ -9,19 +9,33 @@ return {
       -- we will register our own autocommands later
       vim.g.loaded_xmake = false
     end,
-    opts = {
-      runner = { type = "terminal" },
-    },
+    opts = {},
     config = function(_, opts)
-      require("xmake").setup(opts)
+      local xmake = require("xmake")
 
       local cwd = LazyVim.root()
+
+      -- HACK: force to use LazyVim.root() as the cwd for all xmake commands,
+      --       since xmake.lua can be in a subdirectory.
+      --
+      ---@param info_name xmake.InfoEnum
+      xmake.info.defer_reload = function(info_name)
+        vim.schedule(function()
+          local system = vim.system
+          ---@diagnostic disable-next-line: duplicate-set-field
+          vim.system = function(cmd)
+            return system(cmd, { cwd = cwd })
+          end
+          xmake.info[info_name].load()
+          vim.system = system
+        end)
+      end
+
+      xmake.setup(opts)
+
       local should = nil
       local function should_load()
-        local current_cwd = LazyVim.root()
-        if current_cwd ~= cwd then
-          cwd = current_cwd
-        elseif should ~= nil then
+        if should ~= nil then
           return should
         end
 
@@ -42,7 +56,7 @@ return {
         group = group,
         pattern = "xmake.lua",
         callback = function(args)
-          require("xmake").lsp.init(args)
+          xmake.lsp.init(args)
         end,
       })
 
@@ -52,7 +66,7 @@ return {
         callback = function()
           if should_load() and not loaded then
             loaded = true
-            require("xmake").info.all_defer_reload()
+            xmake.info.all_defer_reload()
             vim.notify("Loaded xmake.lua", vim.log.levels.INFO, { title = "xmake.nvim" })
           end
         end,
@@ -63,7 +77,6 @@ return {
         pattern = "xmake.lua",
         callback = function()
           if should_load() then
-            local xmake = require("xmake")
             xmake.info.defer_reload("mode")
             xmake.info.defer_reload("target")
           end
