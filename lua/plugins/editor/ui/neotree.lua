@@ -85,24 +85,24 @@ return {
             end,
           },
         },
-        nesting_rules = {
-          ["npm"] = {
-            pattern = "^package%.json$",
-            files = { "package-lock.json", "pnpm-lock.yaml" },
-          },
-          ["corgo"] = {
-            pattern = "^Cargo.toml$",
-            files = { "Cargo.lock" },
-          },
-          ["js"] = {
-            pattern = "^(.+)%.js$",
-            files = { "%1.js.map", "%1.min.js" },
-          },
-          ["ts"] = {
-            pattern = "^(.+)%.ts$",
-            files = { "%1.ts.map", "%1.d.ts.map" },
-          },
-        },
+        -- nesting_rules = {
+        --   ["npm"] = {
+        --     pattern = "^package%.json$",
+        --     files = { "package-lock.json", "pnpm-lock.yaml" },
+        --   },
+        --   ["corgo"] = {
+        --     pattern = "^Cargo.toml$",
+        --     files = { "Cargo.lock" },
+        --   },
+        --   ["js"] = {
+        --     pattern = "^(.+)%.js$",
+        --     files = { "%1.js.map", "%1.min.js" },
+        --   },
+        --   ["ts"] = {
+        --     pattern = "^(.+)%.ts$",
+        --     files = { "%1.ts.map", "%1.d.ts.map" },
+        --   },
+        -- },
         default_component_configs = {
           git_status = {
             symbols = {
