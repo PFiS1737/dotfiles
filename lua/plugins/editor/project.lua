@@ -5,7 +5,7 @@ return {
     "ahmedkhalf/project.nvim",
     event = "VeryLazy",
     opts = {
-      manual_mode = false,
+      manual_mode = true,
       silent_chdir = false,
     },
     config = function(_, opts)
