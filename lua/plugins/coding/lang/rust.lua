@@ -148,17 +148,6 @@ return {
         },
       })
 
-      if vim.env.TERMUX_VERSION ~= nil then
-        opts.dap = {
-          -- FIXME: Termux don't have a codelldb package now
-          adapter = {
-            type = "executable",
-            command = "lldb-dap",
-            name = "lldb",
-          },
-        }
-      end
-
       -- Override any other settings
       opts.server.default_settings["rust-analyzer"] = require("config.lsp.rust-analyzer")
 

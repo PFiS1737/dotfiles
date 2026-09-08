@@ -5,17 +5,6 @@ return {
 
   {
     "nvim-neotest/neotest",
-    init = function()
-      -- FIXME: vim.loop.cpu_info() return nil in termux
-      if vim.env.TERMUX_VERSION ~= nil then
-        ---@diagnostic disable-next-line: inject-field
-        vim.loop.cpu_info = function()
-          return {
-            [1] = nil,
-          }
-        end
-      end
-    end,
     keys = {
       {
         "<leader>tT",
