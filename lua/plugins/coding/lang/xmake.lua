@@ -91,7 +91,7 @@ return {
         clangd = {
           on_attach = function(_, buffer)
             if #vim.fs.find("xmake.lua", { path = LazyVim.root() }) == 1 then
-              local map = require("utils.keymap").create_map_for(buffer, "n")
+              local map = require("utils.keymap").create_map_for_mode(buffer, "n")
 
               map("<leader>dd", "<cmd>Xmake debug<cr>", "Debug (Xmake)")
             end

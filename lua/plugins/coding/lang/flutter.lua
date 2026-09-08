@@ -43,7 +43,7 @@ return {
     config = function(_, opts)
       opts.lsp = opts.lsp or {}
       opts.lsp.on_attach = function(_, buffer)
-        local map = require("utils.keymap").create_map_for(buffer, "n")
+        local map = require("utils.keymap").create_map_for_mode(buffer, "n")
 
         map("<leader>dd", "<cmd>FlutterDebug<cr>", "Start debugging (Flutter)")
         map("<leader>c<c-r>", function()

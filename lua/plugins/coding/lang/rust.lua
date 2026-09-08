@@ -28,7 +28,7 @@ return {
         },
         server = {
           on_attach = function(_, buffer)
-            local map = require("utils.keymap").create_map_for(buffer, "n")
+            local map = require("utils.keymap").create_map_for_mode(buffer, "n")
 
             -- `textDocument/hover` got deprecated
             -- see https://github.com/mrcjkb/rustaceanvim/issues/556#issuecomment-2447859092
