@@ -21,6 +21,10 @@ return {
       codelens = {
         enabled = false,
       },
+      document_color = {
+        enabled = true,
+        style = "virtual",
+      },
     },
   },
 }
